@@ -165,8 +165,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 50,
     'DEFAULT_THROTTLE_RATES': {
-        'anon_burst': '6/min',
-        'anon_sustained': '60/hour',
+        'anon_burst': '10000/min',
+        'anon_sustained': '1000000/hour',
     }
 }
 
@@ -179,6 +179,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 UPLOAD_COMPILED_PATH = 'uploads/binaries'
 UPLOAD_DECOMPILED_PATH = 'uploads/decompilations'
+
+# [CUSTOM] Allow large file uploads (1GB)
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1073741824
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1073741824
 
 def show_toolbar(request):
     return True

@@ -58,23 +58,12 @@
             </div>
         </div>
     </header>
-    {% if show_banner %}
-    <section id="banner" class="container-fluid mb-5 text-light bg-dark">
-        <div class="row py-2 px-4">
-            <span>
-                Welcome visitors! We are experiencing a lot of load, sorry if the service is unavailable when you stop by. In the meantime, check out one of the already generated results in the "Samples" section, or
-                <a id="queue-url" href="{% url 'explorer:queue' %}" title="View queue details">
-                    check the queue to see the wait time.
-                </a>
-            </span>
-        </div>
-    </section>
-    {% endif %}
+
     <section id="input" class="container">
         <div class="row my-3">
             <div class="col-md-6">
                 <h3>Upload File</h3>
-                <p>Your file must be <strong>less than 2MB</strong> in size. Uploaded binaries <a href="{% url 'explorer:faq' %}#">are retained</a>.
+                <p>Upload a file for decompilation.
                 </p>
                 <form class="input-group" id="binary_upload_form">
                     <input type="file" class="form-control form-control-sm input-group-append" id="file" name="file" value required>
